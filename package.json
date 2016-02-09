@@ -1,0 +1,27 @@
+{
+  "name": "is-pwa",
+  "version": "0.0.0",
+  "description": "Detects if a given URL is a PWA.",
+  "license": "MIT",
+  "repository": "hemanth/is-pwa",
+  "author": {
+    "name": "Hemanth.HM",
+    "email": "hemanth.hm@gmail.com",
+    "url": "h3manth.com"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "echo 'Not yet'"
+  },
+  "files": [
+    "index.js"
+  ],
+  "keywords": [
+  ],
+  "dependencies": {
+  },
+  "devDependencies": {
+  }
+}
