@@ -1,25 +1,68 @@
-#is-pwa
-> Detects if a given URL is a PWA.
+# is-pwa [![Build Status](https://travis-ci.org/hemanth/is-pwa.svg?branch=master)](https://travis-ci.org/hemanth/is-pwa)
+
+> My fantabulous module
 
 
-__What is a Progressive Webapp?__
+## Install
 
-As there is no formal defination yet, let us assume that an URL is a PWA if it statisfies the below:
-
-* Offline supprot with ServiceWorkers.
-
-* Add to home screen.
-
-* Splash screen.
+```
+$ npm install --save is-pwa
+```
 
 
-__How could we detect it?__
+## Usage
 
-Well, I am yet to find a soild way for this, has of now thinking to use an headless browser and detect:
+```js
+const isPwa = require('is-pwa');
 
-* ServiceWorkers.
+isPwa('unicorns');
+//=> 'unicorns & rainbows'
+```
 
-* `manifest.json`
 
-P.S: Simulating offline in a headless browser and checking if there is any meaniful response seems to be a nice challenge to solve.
+## API
 
+### isPwa(input, [options])
+
+#### input
+
+Type: `string`
+
+Lorem ipsum.
+
+#### options
+
+##### foo
+
+Type: `boolean`<br>
+Default: `false`
+
+Lorem ipsum.
+
+
+## CLI
+
+```
+$ npm install --global is-pwa
+```
+
+```
+$ is-pwa --help
+
+  Usage
+    is-pwa [input]
+
+  Options
+    --foo  Lorem ipsum. [Default: false]
+
+  Examples
+    $ is-pwa
+    unicorns & rainbows
+    $ is-pwa ponies
+    ponies & rainbows
+```
+
+
+## License
+
+MIT © [Hemanth.HM](https://h3manth.com)

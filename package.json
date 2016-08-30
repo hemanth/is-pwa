@@ -1,7 +1,7 @@
 {
   "name": "is-pwa",
   "version": "0.0.0",
-  "description": "Detects if a given URL is a PWA.",
+  "description": "My fantabulous module",
   "license": "MIT",
   "repository": "hemanth/is-pwa",
   "author": {
@@ -9,19 +9,31 @@
     "email": "hemanth.hm@gmail.com",
     "url": "h3manth.com"
   },
+  "bin": "cli.js",
   "engines": {
     "node": ">=0.10.0"
   },
   "scripts": {
-    "test": "echo 'Not yet'"
+    "test": "xo && ava",
+    "lunch-chrome": "./node_modules/lighthouse/lighthouse-core/scripts/launch-chrome.sh"
   },
   "files": [
-    "index.js"
+    "index.js",
+    "cli.js"
   ],
   "keywords": [
+    "cli-app",
+    "cli",
+    ""
   ],
   "dependencies": {
+    "is-url": "^1.2.2",
+    "lighthouse": "^1.1.2",
+    "meow": "^3.7.0",
+    "npm": "^3.10.6"
   },
   "devDependencies": {
+    "ava": "^0.12.0",
+    "xo": "^0.12.1"
   }
 }
