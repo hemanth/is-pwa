@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 'use strict';
 const meow = require('meow');
-const npm = require("npm");
+const spawn = require('cross-spawn');
 const isPwa = require('./');
 
 const cli = meow([
@@ -18,20 +18,26 @@ const cli = meow([
 	'  ponies & rainbows'
 ]);
 
-const launchChrome = () => npm.load(function (err) {
-  if (err) throw new Error(err);
-  npm.commands.runScript(["lunch-chrome"], function (err, data) {
-    if (err) throw new Error(err);
-    isPwa(cli.input[0])
-    	.then(console.log)
-    	.catch(console.error)
+spawn.sync(
+  'npm', 'explore -g lighthouse -- npm run chrome&'.split(' '),
+  {stdio: 'inherit', env: process.env}
+);
 
-    process.on('exit', function() {
-      console.log('process is about to exit, kill ffmpeg');
-      child_process.kill();
-    });
+isPwa(cli.input[0])
+  .then(score => {
+    if(score) {
+      console.log(`It is a PWA! With a lighthouse score of: ${score}`);
+    } else {
+      console.error('Sorry, it\'s not a PWA');
+    }
   })
-  npm.registry.log.on("log", function (message) { })
-});
-
-launchChrome();
+  .catch(err => {
+    if (err.code === 'ECONNREFUSED') {
+      console.error('Unable to connect to Chrome. Please run Chrome w/ debugging port 9222 open:');
+      console.error('    npm explore -g lighthouse -- npm run chrome');
+    } else {
+      console.error('Runtime error encountered:', err);
+      console.error(err.stack);
+    }
+    process.exit(1);
+  });

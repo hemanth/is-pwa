@@ -14,6 +14,6 @@ module.exports = url => {
     .then(data => {
         const agg = data.aggregations.find(a => a.name === 'Progressive Web App');
         const totalScore = getTotalScore(agg);
-        return totalScore > 85; // more or less.  this is debatable. :)
+        return totalScore;
     });
-};
+}

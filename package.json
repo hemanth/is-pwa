@@ -27,10 +27,10 @@
     ""
   ],
   "dependencies": {
+    "cross-spawn": "^4.0.0",
     "is-url": "^1.2.2",
     "lighthouse": "^1.1.2",
-    "meow": "^3.7.0",
-    "npm": "^3.10.6"
+    "meow": "^3.7.0"
   },
   "devDependencies": {
     "ava": "^0.12.0",
