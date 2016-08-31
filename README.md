@@ -1,6 +1,6 @@
-# is-pwa [![Build Status](https://travis-ci.org/hemanth/is-pwa.svg?branch=master)](https://travis-ci.org/hemanth/is-pwa)
+# is-pwa
 
-> My fantabulous module
+> Checks if a given URL is a PWA.
 
 
 ## Install
@@ -9,35 +9,30 @@
 $ npm install --save is-pwa
 ```
 
-
 ## Usage
 
 ```js
 const isPwa = require('is-pwa');
 
-isPwa('unicorns');
-//=> 'unicorns & rainbows'
+isPwa(<URL>)
+  .then(score => {
+    if(score>75) {
+      console.log(`It is a PWA! With a lighthouse score of: ${score}`);
+    } else {
+      console.error('Sorry, it\'s not a PWA :(');
+    }
+  })
 ```
-
 
 ## API
 
-### isPwa(input, [options])
+### isPwa(input)
 
 #### input
 
 Type: `string`
 
-Lorem ipsum.
-
-#### options
-
-##### foo
-
-Type: `boolean`<br>
-Default: `false`
-
-Lorem ipsum.
+URL of the PWA.
 
 
 ## CLI
@@ -47,19 +42,22 @@ $ npm install --global is-pwa
 ```
 
 ```
-$ is-pwa --help
+$ is-pwa 
+
+  Checks if a given URL is a PWA.
 
   Usage
-    is-pwa [input]
 
-  Options
-    --foo  Lorem ipsum. [Default: false]
+  Make sure you have ran `npm explore -g lighthouse -- npm run chrome&`
+
+    $ is-pwa [input]
 
   Examples
-    $ is-pwa
-    unicorns & rainbows
-    $ is-pwa ponies
-    ponies & rainbows
+    $ is-pwa https://jsfeatures.in
+     It is a PWA! With a lighthouse score of: 80
+  
+    $ is-pwa https://h3manth.com
+     Sorry, it's not a PWA :(
 ```
 
 
