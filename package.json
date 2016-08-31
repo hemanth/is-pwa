@@ -1,6 +1,6 @@
 {
   "name": "is-pwa",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Checks if a given URL is a PWA.",
   "license": "MIT",
   "repository": "hemanth/is-pwa",
