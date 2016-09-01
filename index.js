@@ -17,3 +17,6 @@ module.exports = url => {
         return totalScore;
     });
 }
+
+
+// Origin -> https://github.com/paulirish/pwmetrics/commit/f71001ce3a9200015af07615e9834b222c4bc6d5#commitcomment-18754617
