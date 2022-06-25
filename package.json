@@ -31,7 +31,7 @@
   ],
   "dependencies": {
     "is-url": "^1.2.2",
-    "lighthouse": "^2.2.1",
+    "lighthouse": "^9.3.0",
     "meow": "^3.7.0"
   },
   "devDependencies": {}
