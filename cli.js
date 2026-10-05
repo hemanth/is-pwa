@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 'use strict';
-const meow = require('meow');
+const meow = ((m) => (m && m.default) ? m.default : m)(require(''meow''));
 const isPwa = require('./');
 
 const cli = meow([

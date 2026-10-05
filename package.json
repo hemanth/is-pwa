@@ -1,6 +1,6 @@
 {
   "name": "is-pwa",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Checks if a given URL is a PWA.",
   "license": "MIT",
   "repository": "hemanth/is-pwa",
@@ -14,7 +14,8 @@
     "node": ">=5"
   },
   "scripts": {
-    "lunch-chrome": "./node_modules/lighthouse/lighthouse-core/scripts/launch-chrome.sh"
+    "lunch-chrome": "./node_modules/lighthouse/lighthouse-core/scripts/launch-chrome.sh",
+    "test": "node --check index.js"
   },
   "files": [
     "index.js",
@@ -31,8 +32,8 @@
   ],
   "dependencies": {
     "is-url": "^1.2.2",
-    "lighthouse": "^2.2.1",
-    "meow": "^3.7.0"
+    "lighthouse": "^13.5.0",
+    "meow": "^14.1.0"
   },
   "devDependencies": {}
 }
